@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script>
+	function login(){
+		var logifr = document.querySelector('#logifr');
+		logifr.style.display = "block";
+	}
+</script>
+<style>
+	body{
+		height : 100%;
+		margin :0px;
+		padding : 0px;
+		min-width: 1000px;
+	}
+	header{
+		box-sizing: border-box;
+		margin: 2px;
+		background: #D3D3D3;
+		height : 70px;
+		
+	}
+	header img{
+		width : 40px;
+		height: 40px;
+		float : left;
+		position : relative;
+		top : 10px;
+		left: 10px;
+	}
+	header a{
+		box-sizing: border-box;
+		float:left;
+		color : black;
+		font-size: 0.8em;
+		position : relative;
+		top : 10px;
+		left : 20px;
+		
+	}
+	a:link{
+		text-decoration: none;
+	}
+	a#cart{
+		text-decoration: underline;
+	}
+	nav{
+		box-sizing: border-box;	
+		width : 100%;
+		height : 50px;
+		clear : both;
+		border : 2px dotted grey;
+		border-left : none;
+		border-right : none;
+		text-align: center;
+		text-transform : uppercase;
+		font-weight: bold;
+	}
+	
+	nav>ul>li{
+		display: inline;
+ 		letter-spacing: 5px; 
+ 		margin : 20px;
+ 		clear : both;
+ 		list-style-type: none;
+ 		
+ 		
+	}
+	nav>ul>li>ul{
+		display: none;
+	}
+	
+	section{
+		box-sizing: border-box;
+		margin: 2px;
+		margin-left : 1%;
+		width: calc(60% - 1%);
+		height: 800px;
+ 		display : inline-block;
+	}	
+	aside#left{
+		box-sizing: border-box;
+		margin: 2px;
+		width: calc(20% - 1%);
+		height: 800px;
+		float: left;
+		background:	#778899	;
+	}
+	#mt{
+		box-sizing: border-box;
+		height: 30px;
+	}
+	aside#left li{
+		list-style-type: none;
+		display : block;
+		padding : 5px;
+		float : left;
+		width : calc(100% - 5%);
+		height : 25px;
+		background : 	#708090;
+		border : 0.5px solid darkgrey; 
+		text-align: left;
+	}
+	aside#left li a {
+		color : white;
+	}
+	aside#right{
+		box-sizing: border-box;
+		margin: 2px;
+		padding: 5px;
+		width : calc(20% - 1%);
+		float : right;
+		height: 800px;
+		background:#DCDCDC;
+	}
+	div#login a{
+		text-decoration: underline;
+		font-size: 0.8em;
+	}
+	
+	article{
+		box-sizing: border-box;
+		margin: 2px;
+		padding: 5px;
+		height : 100%;
+	}
+	iframe{
+		height: 100%;
+		width: 100%;
+		border : none;
+	}
+	#logifr {
+		display : none;
+		width:100%;
+		height: 30px;
+		border : none;
+	}
+	
+	footer{
+		box-sizing: border-box;
+		margin: 2px;
+		padding: 5px;
+		background: black;
+		height : 60px;
+		text-align: center;
+	}
+	footer>p{
+		color :lightgrey;
+		font-size: 0.8em;
+	}
+	
+	
+</style>
+</head>
+<body>
+	<header>
+        <h1>
+            <img src="../images/쇼핑백.jpg">
+            <a href="">Web Shopping</a>
+       </h1>
+   </header>
+   <nav>
+        <ul>
+            <li><a href="main.html">Home</a>
+            	<ul>
+            	<li>쇼핑카트 보기</li>
+            	<li>회원가입</li>
+            	<li>비밀번호 분실</li>
+            	</ul>
+            </li>
+            <li><a href="main.html">About Us</a></li>
+            <li><a href="main.html">News</a></li>
+            <li><a href="main.html">My Account</a></li>
+            <li><a href="main.html">Contacts</a></li>
+        </ul>
+    </nav>
+    
+   
+    
+    <aside id="left">
+        <div id="mt">
+        </div>
+			   	<li><a href="computer.html" target="ifr">컴퓨터</a></li>
+            	<li><a href="clothing.html" target="ifr">의류</a></li>
+            	<li><a href="music.html" target="ifr">음악</a></li>
+            	<li><a href="movie.html" target="ifr">영화</a></li>
+            	<li><a href="sports.html" target="ifr">스포츠/레저</a></li>
+            	<li><a href="furniture.html" target="ifr">가구/인테리어</a></li>
+            	<li><a href="food.html" target="ifr">식품</a></li>
+            <form action="#">
+            
+            </form>
+        </div>
+    </aside>
+     <section id="main">
+        <article id="article1">
+            <iframe src="computer.html" name="ifr"> 
+            </iframe>
+        </article>
+    </section>
+    <aside id="right">
+        <div id="shopcart">
+            <h2>Shopping Cart</h2>
+            <p>현재 쇼핑카트에  물품이 없습니다.</p>
+            <a id="cart" href="shopcart.html" target="ifr">쇼핑카트보기</a>
+        </div>
+        <div id="login">
+           <form action="login.jsp" target="logifr">
+            <h2>Log In</h2>
+			아이디<br>
+            <input id="id" type="text" ><br>
+                        패스워드<br>
+            <input id="pw" type="text" ><br>
+             <iframe id="logifr" src="login.jsp" name="logifr"> 
+            </iframe>
+            <br>
+            <input type="submit" value="로그인" onclick="login()">
+            <button type="reset">초기화</button><br><br>
+            <a href="register.html" target="ifr">회원가입</a>
+            <a href="lostpass.html" target="ifr">비밀번호 분실</a>
+            </form>
+        </div>
+    </aside>
+    <footer>
+	<p>Copyright (c)2019 Hong</p>
+	</footer>
+    
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	td{
+		text-align: center;
+	}
+	#di{
+		width : 200px;
+		height: 300px;
+		background-color: white;
+	}
+	
+</style>
+<script>
+	function proc1(){
+		dan = document.form.sel.value;
+		res = dan + "단 <br><br>";
+		for(i=1; i<10; i++){
+			res += dan + " * " + i + " = " + dan*i +"<br>";
+		}
+		document.querySelector("#di").innerHTML= res;
+	}
+	
+</script>
+</head>
+<body>
+
+<div class="box">
+		<h3>1. select → 구구단</h3>
+		<br>
+		<form name="form">
+		<table border="1">
+			<tr>
+				<td>			
+				<select name="sel" type="text">
+					<option value="2">2단</option>
+					<option value="3">3단</option>
+					<option value="4">4단</option>
+					<option value="5">5단</option>
+					<option value="6">6단</option>
+					<option value="7">7단</option>
+					<option value="8">8단</option>
+					<option value="9">9단</option>
+				</select>
+				<input type="button" value="출력" onclick="proc1()">
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<div name="print" id="di"></div>
+				</td>
+			</tr>
+		</table>
+		</form>
+		
+		<br><br>
+	</div>
+</body>
+</html>

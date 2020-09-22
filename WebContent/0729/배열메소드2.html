@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script>
+	arr = ["사과", "복숭아", "수박", "딸기", "사과", "바나나", "사과", "자두"];
+	
+	function proc1(){
+		// 시작위치 입력 prompt
+		start = parseInt(prompt("추출 시작위치를  입력해주세요. (정수)"));
+		// 끝 위치 입력 prompt
+		end = parseInt(prompt("추출 끝낼 위치를 입력해주세요. (정수)"));
+		
+		
+		res = "원래 배열  : " + arr + "<br>";
+		aa  = arr.slice(start, end);
+		res += "추출한 요소  slice(" + start + ","+end+") : "+ aa + "<br>";
+		
+		document.querySelector("#result1").innerHTML = res;
+		
+	}
+	
+	function proc2(){
+		
+		res = "원래 배열  : " + arr + "<br>";
+
+		// 2번째 위치에서 1개를 삭제하고 "파인애플", "체리" 를 삽입한다.
+		aa  = arr.splice(2, 1, "파인애플","체리");
+		res += 'splice(2, 1, "파인애플","체리") : '+ arr;
+		
+		document.querySelector("#result2").innerHTML = res;
+		
+	}
+	
+	function proc3(){
+		var arr = [1,2,3,4,5,6]
+		
+		
+		res = arr + "<br>";
+		res += window.arr+ "<br>";
+		
+		aa = arr.concat(window.arr);
+		res += "합친배열 aa.length : " + aa.length;
+		
+		res += "arr.length : " +  arr.length+ "<br>";
+		res += "window.arr.length  : " +  window.arr.length+ "<br>";
+		document.querySelector("#result3").innerHTML = res;
+	}
+	
+	function proc4(){
+		
+		res = "arr : "+arr + "<br>";
+		res += "arr.length : " + arr.length+ "<br>";
+		
+		for(i=0; i<arr.length; i++){
+			res += arr[i] + "&nbsp;&nbsp;&nbsp;&nbsp";
+		}
+		res += "<br>";
+		aa = arr.join("/");
+		res += "aa : " + aa + "<br>";
+		res += "arr.join(/).length" + aa.length;
+		
+		document.querySelector("#result4").innerHTML = res;
+		
+	}
+	
+	function proc5(){
+		res = "원래 배열 : "  +arr + "<br>";
+		arr.reverse();
+		res += "arr.reverse() : "+ arr+ "<br>";
+		document.querySelector("#result5").innerHTML = res;
+	}
+	
+	function proc6(){
+		arr = [234, 21, 150, 11, 55, 501];
+		
+		res = "원래 배열 : "  +arr + "<br>";
+		
+		arr.sort();
+		
+		res += "arr.sort() : " + arr + "<br>";
+		document.querySelector("#result6").innerHTML = res;
+	}
+	
+	function proc7(){
+		arr = [234, 21, 150, 11, 55, 501];
+		
+		res = "원래 배열 : "  +arr + "<br>";
+		
+		arr.sort(function(a,b){
+			// 연산 후 양수값이 나오면 자리 바꿈
+			return a - b;
+		});
+		
+		res += "arr.sort_as() : " + arr + "<br>";
+		document.querySelector("#result7").innerHTML = res;
+	}
+	
+	function proc8(){
+		arr = [234, 21, 150, 11, 55, 501];
+		
+		res = "원래 배열 : "  +arr + "<br>";
+		
+		arr.sort(function(a,b){
+			// 연산 후 양수값이 나오면 자리 바꿈
+			return b - a;
+		});
+		
+		
+		res += "arr.sort_des() : " + arr + "<br>";
+		document.querySelector("#result8").innerHTML = res;
+	}
+</script>
+</head>
+<body>
+
+<div class="box">
+		<h3>1. slice/splice</h3>
+		- slice(start, end) : start ~ end-1 까지의 요소를 추출 <br>
+		- splice(index,n, a,b,c,...) : index위치에서 n개를 삭제하고 a,b,c,... 요소들을 추가한다.<br>
+		<br>
+		<input type="button" value="slice" onclick="proc1()">
+		<input type="button" value="splice" onclick="proc2()">
+		<br><br>
+		<div id = "result1"></div>	
+		<div id = "result2"></div>
+	</div>
+	
+	<div class="box">
+		<h3>2. concat/join/reverse</h3>
+		- a.concat(b,c) : 여러개의 배열요소를 한개의 배열로 합친다. <br>
+		- a.join() : 한개의 배열 요소들을 하나의 문자열로 변환한다.<br>
+		- a.reverse() : a 배열의 순서 뒤집기<br>
+		<br>
+		<input type="button" value="concat" onclick="proc3()">
+		<input type="button" value="join" onclick="proc4()">
+		<input type="button" value="reverse" onclick="proc5()">
+		<br><br>
+		<div id = "result3"></div>	
+		<div id = "result4"></div>
+		<div id = "result5"></div>
+	</div>
+	<div class="box">
+		<h3>3. sort</h3>
+		arr = [234, 21, 150, 11, 55, 501]<br>
+		- arr.sort() : 자릿수기준으로 정렬  → 11 150 21 234 501 55 <br>
+		- 오름차순 :  11 21 55 150 234 501 <br>
+		- 내림차순 :  501 234 150 55 21 11 <br>
+		<br>
+		<input type="button" value="sort" onclick="proc6()">
+		<input type="button" value="sort_as" onclick="proc7()">
+		<input type="button" value="sort_des" onclick="proc8()">
+		<br><br>
+		<div id = "result6"></div>	
+		<div id = "result7"></div>
+		<div id = "result8"></div>
+	</div>
+</body>
+</html>

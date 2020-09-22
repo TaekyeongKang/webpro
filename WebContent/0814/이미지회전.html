@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	img{
+		width : 70px;
+		height: 70px;
+	}
+	#end{
+		display : none;
+	}
+</style>
+<script>
+window.onload = function(){
+	start = document.getElementById('start');
+	end = document.getElementById('end');
+}
+
+	function proc1(){
+		end.style.display = "inline";
+		start.style.display = "none";
+			result1 = document.getElementById('result1');
+		a = setInterval(function(){
+			// result1에서 첫번째 요소를 선택한다.
+			fc = result1.firstChild;
+			// result1에 선택한 첫번째 요소를 추가한다.
+			result1.appendChild(fc);
+			
+		},1000);
+	}
+	
+	
+	function proc2(){
+		start.style.display = "inline";
+		end.style.display = "none";
+		
+		clearInterval(a);
+		
+	}
+	
+</script>
+</head>
+<body>
+
+<div class="box">
+		<h3>1. 이미지회전</h3>
+		1초마다 한번씩 맨처음 이미지를 마지막으로 옮긴다.		<br>
+		첫번째 이미지ㅡㄹ 선택 : firstChild		<br>
+		result1 에 추가한다 : appendChild()		<br>
+		기존에 이미 존재하는 요소를 추가하면 기존의 요소는 삭제된다. - 잘라내기/붙여넣기		<br>
+		<br>
+		<input id="start" type="button" value="확인" onclick="proc1()">
+		<input id="end" type="button" value="종료" onclick="proc2()">
+		<br><br>
+		<div id = "result1">
+			<img src="../images/음악1.jpg" alt="">
+			<img src="../images/Anne-Marie(앤마리)-2002.jpg" alt="">
+			<img src="../images/Coca-Cola-logo.png" alt="">
+			<img src="../images/핫초코.jpg" alt="">
+			<img src="../images/카페라떼.jpg" alt="">
+			<img src="../images/커피2.jpg" alt="">
+		</div>	
+	</div>
+</body>
+</html>

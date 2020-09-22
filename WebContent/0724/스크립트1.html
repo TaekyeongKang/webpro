@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+
+</style>
+
+
+</head>
+<body>
+<pre>
+	날짜 생성
+	
+	var now = new Date();
+	- 표준시 : document.write(now +"&lt;br&gt;"); 
+	- 연, 월, 일,   시, 분, 초 : document.write(now.toLocaleString() +"&lt;br&gt;");
+	- 연, 월, 일  : document.write(now.toLocaleDateString() +"&lt;br&gt;");
+	- 시 , 분, 초 : document.write(now.toLocaleTimeString() +"&lt;br&gt;");
+	
+</pre>
+
+<script>
+	var now = new Date();
+	document.write(now +"<br>");
+	document.write(now.toLocaleString() +"<br>");
+	document.write(now.toLocaleDateString() +"<br>");
+	document.write(now.toLocaleTimeString() +"<br>");
+</script>
+
+</body>
+</html>

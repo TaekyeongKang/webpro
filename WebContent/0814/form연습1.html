@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	td{
+		text-align: center;
+	}
+	.box input[type=text]{
+		width: 30px;
+		height: 20px;
+	}
+</style>
+<script>
+	function proc1(){
+		
+		// 단 값 얻어오기
+		dan = form.dan.value;
+		res = dan + "단 \n\n";
+		for(i=1; i<10; i++){
+			res += dan + " * " + i + " = " + dan*i +"\n";
+		}
+	//result = document.createTextNode(res);
+	document.form.print.value = res;			
+		
+	}
+</script>
+</head>
+<body>
+
+<div class="box">
+		<h3>1. text 입력 → 구구단</h3>
+		<br>
+		<form name="form">
+		<table border="1">
+			<tr>
+				<td>			
+				<input name="dan" type="text">단
+				<input type="button" value="출력" onclick="proc1()">
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<textarea name="print" rows=30 cols = 30></textarea>
+				</td>
+			</tr>
+		</table>
+		</form>
+		
+		<br><br>
+	</div>
+</body>
+</html>

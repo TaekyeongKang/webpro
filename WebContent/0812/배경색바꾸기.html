@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<!-- <style>
+	#clear {
+		display : none;
+	}
+</style> -->
+<script>
+	window.onload = function(){
+		document.querySelector("#clear").style.display = "none";
+		
+		result2 = document.body;
+		btnok = document.getElementById('ok');
+		btnclear = document.getElementById('clear');
+	}
+	
+	function proc1(){
+		btnok.style.display = "none";
+		btnclear.style.display = "inline";
+		
+		result = document.querySelector("body");
+		
+		
+		a = setInterval(function(){
+			cr = Math.floor(Math.random()*255);
+			cg = Math.floor(Math.random()*255);
+			cb = Math.floor(Math.random()*255);
+			
+			result.style.background=`rgb(${cr}, ${cg}, ${cb})`;
+			console.log(a);
+			
+		},1000);
+		
+	}
+	
+	function proc2(){
+		btnok.style.display = "inline";
+		btnclear.style.display = "none";
+		
+		clearInterval(a);
+		
+	}
+	
+</script>
+</head>
+<body>
+
+<div class="box">
+		<h3>1. 1초마다 한번씩 배경색 바꾸기</h3>
+		종료버튼 만들기<br>
+		<br>
+		<input id="ok" type="button" value="확인" onclick="proc1()">
+		<input id="clear" type="button" value="종료" onclick="proc2()">
+		<br><br>
+		<div id = "result1"></div>	
+	</div>
+</body>
+</html>

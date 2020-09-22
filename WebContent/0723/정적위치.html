@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	div{
+		width: 100px;
+		height: 50px;
+		background: yellow;
+		margin : 10px;
+		padding: 10px;
+	}
+	
+	#d2{
+		background: pink;
+		position: relative; /* 상대적인 */
+		top : 100px; /* 포지션 된 위치 기준으로 100px 만큼 아래로 내려가기 */
+	}
+	#d3{
+		background: cyan;
+		position: absolute; /* 스크롤바를 움직이면 스크롤 따라 보였다가 안보였다 함*/
+		top : 500px;	/* 화면 최상단을 기준으로 100px 내려오기 */
+	}
+	#d4{
+		background: orange;
+	}
+	#fix{
+		position: fixed; /* 스크롤바를 움직여도 화면에 고정되어 계속 보임*/
+		right : 30px;	/* 화면 최 우단 기준으로 오른쪽에 30px 띄우기*/
+	}
+	
+</style>
+</head>
+<body>
+	<div id="d1">1</div>
+	<div id="d2">2</div>
+	<div id="d3">3</div>
+	<div id="d4">4</div>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div id="fix">4</div>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	
+	
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script>
+	str = "가나다/사자/호랑이/고양이/기린/하마/코끼리/가나다";
+	str2 = "딸기,복숭아,오렌지,수박,망고";
+	
+	function proc1(){
+		ind = prompt("인덱스를 입력하세요.");
+		
+		// 전체 글자수보다 크면 안됨
+		if(ind > str.length-1) {
+			alert("문자범위를 초과했습니다.");
+			return;
+		}
+		ch = str.charAt(ind);
+		res = "str.charAt("+ind+"); : " + ch + "<br>";
+		
+		document.querySelector("#result1").innerHTML = res;
+	}
+	
+	function proc2(){
+		
+		ind = prompt("인덱스를 입력하세요.")
+		ch = str.charCodeAt(ind);
+		res = "str.charCodeAt("+ind+"); : " + ch + "<br>";
+		
+		document.querySelector("#result2").innerHTML = res;
+	}
+	
+	function proc3(){
+		
+		input = prompt("문자를 입력하세요.")
+		idx = str.indexOf(input);
+		if(idx<0){
+			res = "검색 문자열이 없습니다.";			
+		}else {
+			res ="검색문자 : "+input+"<br>";
+			res +="문자의 위치 : " + idx + "<br>";
+			
+		}
+		
+		document.querySelector("#result3").innerHTML = res;
+	}
+	
+	
+	function proc4(){
+		input = prompt("문자를 입력하세요.")
+		idx = str.lastIndexOf(input);
+		if(idx<0){
+			res = "검색 문자열이 없습니다.";			
+		}else {
+			res ="검색문자 : "+input+"<br>";
+			res +="문자의 위치 : " + idx + "<br>";
+			
+		}
+		
+		document.querySelector("#result4").innerHTML = res;
+	}
+	
+	function proc5(){
+		str3 = str.concat(str2);
+			res =str+"<br>";
+			res += str2 + "<br>";
+			res += str3 + "<br>";
+			
+		document.querySelector("#result5").innerHTML = res;
+	}
+	
+	function proc6(){
+		str4 = "              사과 ,바나나,자두            " ;
+	
+			res =str4+"<br>";
+			res += "str4 문자열 길이 : "+str4.length+"<br>";
+			
+			str4 = str4.trim();
+			res +="trim 후  str4: "+ str4 +"<br>";
+			res += "trim 후 str4 문자열 길이 : "+str4.length+"<br>";
+		
+		document.querySelector("#result6").innerHTML = res;
+	}
+	
+	function proc7(){
+		start = prompt("시작위치 입력");
+		end = prompt("마지막 위치 입력");
+		sub = str.substring(start,parseInt(end)+1);
+		res = "원래 문자열 : " + str+"<br>";
+		res += "substring(" + start + "," + end + ")  :  " + sub + "<br>"; 
+// 		res += "마지막 위치 : " + end + "<br>";
+// 		res += "추출된 문자열 : " + sub + "<br>";
+			
+		document.querySelector("#result7").innerHTML = res;
+	}
+	
+	function proc8(){
+		start = prompt("시작위치 입력");
+		end = prompt("마지막 위치 입력");
+		sl = str.slice(start,parseInt(end)+1);
+		res = "원래 문자열 : " + str+"<br>";
+		res += "slice(" + start + "," + end + ")  :  " + sl + "<br>";
+// 		res += "시작위치 : "+ start + "<br>"; 
+// 		res += "마지막 위치 : " + end + "<br>";
+// 		res += "추출된 문자열 : " + sl + "<br>";
+			
+		document.querySelector("#result8").innerHTML = res;
+	}
+	
+	function proc9(){
+		start = prompt("시작위치 입력");
+		length = prompt("추출할 개수 입력");
+		sub = str.substr(start,length);
+		res = "원래 문자열 : " + str+"<br>";
+		res += "substr(" + start + "," + length + ")  :  " + sub + "<br>";
+// 		res += "시작위치 : "+ start + "<br>"; 
+// 		res += "추출할 개수 : " + length + "<br>";
+// 		res += "추출된 문자열 : " + sub + "<br>";
+			
+		document.querySelector("#result9").innerHTML = res;
+	}
+	
+	function proc10(){
+		
+		arr = str.split("/");
+		
+		res = "원래 문자열 : "+ str + "<br>";
+		res += "문자열 길이 : " + str.length+"<br>";
+		res += "str.split(/) : " + arr + "<br>";
+		res += "배열길이 : " + arr.length+"<br>";
+		
+		document.querySelector("#result10").innerHTML = res;
+		
+	}
+	
+	function proc11(){
+		// 입력한 값 가져오기
+		area = document.querySelector("#area").value;
+		area = area.replace(/\r/g,"").replace(/\n/g,"<br>");
+		document.querySelector("#result11").innerHTML = area;
+	}
+</script>
+</head>
+<body>
+
+<div class="box">
+		<h3>1. charAt / charCodeAt</h3>
+		str = "사자/호랑이/고양이/기린/하마/코끼리"<br>
+		charAt(index)		: index위치의 문자를 리턴<br>
+		charCodeAt(index)	: index위치의 unicode값을 리턴<br>
+		<br>
+		<input type="button" value="charAt" onclick="proc1()">
+		<input type="button" value="charCodeAt" onclick="proc2()">
+		<br><br>
+		<div id = "result1"></div>
+		<div id = "result2"></div>	
+	</div>
+	<div class="box">
+		<h3>2. indexOf / lastIndexOf</h3>
+		str = "가나다/사자/호랑이/고양이/기린/하마/코끼리/가나다"<br>
+		indexOf("문자열")		: 문자열의 위치를 검색<br>
+		lastIndexOf("문자열")	: 문자열의 위치를 뒤에서부터 검색<br>
+		<br>
+		<input type="button" value="indexOf" onclick="proc3()">
+		<input type="button" value="lastIndexOf" onclick="proc4()">
+		<br><br>
+		<div id = "result3"></div>
+		<div id = "result4"></div>	
+	</div>
+	<div class="box">
+		<h3>3. concat / trim</h3>
+		str2 = "딸기,복숭아,오렌지,수박,망고"<br>
+		concat(): 문자열 합치기<br>
+		str4 = "              사과 ,바나나,자두            "<br>
+		trim()	: 앞 뒤 공백제거<br>
+		<br>
+		<input type="button" value="concat" onclick="proc5()">
+		<input type="button" value="trim" onclick="proc6()">
+		<br><br>
+		<div id = "result5"></div>
+		<div id = "result6"></div>	
+	</div><div class="box">
+		<h3>4. substring / slice / substr</h3>
+		str = "가나다/사자/호랑이/고양이/기린/하마/코끼리/가나다"<br>
+		substring(start,end)	: start~(end-1) 범위의 문자 추출<br>
+		slice(start,end): start~(end-1) 범위의 문자 추출<br>
+		substr(start,length): start 부터 length 개수 만큼 문자 추출<br>
+		<br>
+		<input type="button" value="substirng" onclick="proc7()">
+		<input type="button" value="slice" onclick="proc8()">
+		<input type="button" value="substr" onclick="proc9()">
+		<br><br>
+		<div id = "result7"></div>
+		<div id = "result8"></div>
+		<div id = "result9"></div>	
+	</div>
+	
+	<div class="box">
+		<h3>5. split</h3>
+		str = "가나다/사자/호랑이/고양이/기린/하마/코끼리/가나다"<br>
+		split(구분자, 개수) : 구분자를 기준으로 잘라서 배열로 반환<br>
+		<br>
+		<input type="button" value="split" onclick="proc10()">
+		<br><br>
+		<div id = "result10"></div>
+	</div>
+	<div class="box">
+		<h3>6. replace</h3>
+		str = "가나다/사자/호랑이/고양이/기린/하마/코끼리/가나다"<br>
+		replace(old, new) : old의 값을 new 값으로 변경<br>
+		replace(//g) : /와 /사이에 정규표현식을 사용할 수 있다, g: global - old에 해당하는 값을 전부 찾아라<br>
+		<br>
+		<input type="button" value="replace" onclick="proc11()">
+		<br><br>
+		<textarea id="area" rows ="10" cols="60"></textarea>
+		<br>
+		<div id = "result11"></div>
+	</div>
+</body>
+</html>

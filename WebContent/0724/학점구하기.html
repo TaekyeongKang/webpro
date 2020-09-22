@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	div{
+		width: 200px;
+		height: 100px;
+		background: skyblue;
+	}
+</style>
+<script>
+	function score(){
+		
+		score = prompt("점수를 입력하세요.", "0~100 사이");
+		/*
+			String 끼리 + 하면 문자열합치기 → int로 전환해주어야함!!
+			나머지 연산자 사용할 때는 int 형으로 바꿔줄 필요 없이 알아서 바꿔서 계산함
+		*/
+		/*
+		if(score >=90) result ="A";
+		else if(score >=80) result ="B";
+		else if(score >=70) result ="C";
+		else if(score >=60) result ="D";
+		else result= "F";
+		*/
+		scoreCase = parseInt(score/10);
+		
+		switch (scoreCase) {
+		case 10:
+			result ="A";
+			break;
+		case 9:
+			result ="A";
+			break;
+		case 8:
+			result ="B";
+			break;
+		case 7:
+			result ="C";
+			break;
+		case 6:
+			result ="D";
+			break;
+		default:
+			result ="F";
+			break;
+		}
+		
+		res = "점수 : "+ score+"<br>";
+		res += "학점  : " + result + "학점 입니다.";
+		document.getElementsByTagName('div')[0].innerHTML = res;
+		
+		
+	}
+	
+	
+</script>
+</head>
+<body>
+<pre>
+	[확인] 버튼 클릭하면 0~100 사이의 정수를 입력
+	학점을 구해서 div에 출력한다.
+	90 ~ 100 → 'A'
+	80 ~ 89 → 'B'
+	70 ~ 79 → 'C'
+	60 ~ 69 → 'D'
+	0 ~ 59 → 'F'
+</pre>
+	<input type="button" value="확인" onclick="score()"><br>
+	<br>
+	<div></div>
+</body>
+</html>

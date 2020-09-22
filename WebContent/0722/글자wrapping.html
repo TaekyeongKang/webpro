@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	div{
+		width: 300px;
+		height: 200px;
+		border : 2px solid green;
+		margin : 20px;
+		padding : 20px;
+	}
+	#dd{
+		word-wrap : break-word;s
+	}
+	#dd2{
+		display:none; 
+		/* 없는것으로 간주됨, 자리 차지x*/
+	}
+	#dd3 {
+		visibility : hidden;
+		/* 실행하고 있지만 눈에 보이지만 않음, 자리 차지하고있음*/
+	}
+</style>
+</head>
+<body>
+	<pre>
+	div{
+		width: 300px;
+		height: 200px;
+		border : 2px solid green;
+		margin : 20px;
+		padding : 20px;
+	}
+	</pre>
+	<div>
+		sdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+	</div>
+	<pre>
+	div{
+		width: 300px;
+		height: 200px;
+		border : 2px solid green;
+		margin : 20px;
+		padding : 20px;
+	}
+	#dd{
+		word-wrap : break-word;s
+	}
+	공백없이 글자가 계속 이어질 때 밖으로 나가게 된다. → 글자를 잘라서 안으로 들어오게 한다
+	</pre>
+	<div id="dd">
+		sdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+	</div>
+	<div id="dd2">
+	
+	
+	</div>
+	<div id="dd3">
+	
+	
+	</div>
+</body>
+</html>

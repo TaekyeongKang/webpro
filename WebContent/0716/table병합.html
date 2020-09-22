@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	table{
+		border : 3px solid purple;
+	}
+	tr{
+	}
+	td{
+		width: 50px;
+		height: 50px;
+	}
+	#tab2{
+		border-collapse: collapse;
+		margin :20px;
+	}
+	#tab2 #th1{
+		font-size: 1.5em;
+		height: 50px;
+	}
+	#tab2 #td3{
+		width: 400px;
+		height: 50px;
+	}
+	#tab2 .info{
+		text-align: left;
+		text-align: top; 
+		
+	}
+	
+	#tab2 td{
+		width: 100px;
+		text-align: center;
+	}
+	
+</style>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td colspan="4"></td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="4"></td>
+			<td colspan="2" rowspan="2"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<table id="tab2" border="1">
+		<tr>
+			<th id="th1" colspan="5">평생교육원</th>
+		</tr>
+		<tr>
+			<th>강좌이름</th>
+			<th>강의자</th>
+			<th id="td3">소개</th>
+			<th>강좌코드</th>
+			<th>실습비</th>
+		</tr>
+		<tr>
+			<td>뎃셍과</td>
+			<td>김철수</td>
+			<td class="info">모든 미술영역어 어찌구~~~~~모든 미술영역어 어찌구~~~~~모든 미술영역어 어찌구~~~~~모든 미술영역어 어찌구~~~~~</td>
+			<td>1</td>
+			<td>10만원</td>
+		</tr>
+		<tr>
+			<td>바이올린</td>
+			<td>홍길동</td>
+			<td class="info">현악기 어찌구~~~~~~~현악기 어찌구~~~~~~~현악기 어찌구~~~~~~~현악기 어찌구~~~~~~~</td>
+			<td>2</td>
+			<td>20만원</td>
+		</tr>
+		<tr>
+			<td>성악</td>
+			<td>김호성</td>
+			<td class="info">음악회를 통해 기량~~~~~음악회를 통해 기량~~~~~음악회를 통해 기량~~~~~음악회를 통해 기량~~~~~</td>
+			<td>3</td>
+			<td>30만원</td>
+		</tr>
+		
+	</table>
+</body>
+</html>

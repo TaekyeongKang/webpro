@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<title>
+			Welcome MyPage
+		</title>
+		<meta charset="UTF-8">
+		<style> 
+		
+			pre{
+				background-color : lightYellow;
+				border : 5px outset red;
+			}
+			img{
+				
+				width : 250px;
+				height : 180px;
+				
+			}
+			div{
+				width : 55%;
+				margin : 5px auto;
+			}
+			h1{
+				background : lightblue;
+				width : 50%;
+				color : red;				
+				margin : 50px auto;	<!-- auto 는 블럭요소에서 쓸 수 있다.-->
+			}
+			em{
+				color : blue;
+				font-size : 20px;
+			
+				
+			}
+			span{
+				background-color : yellow;
+				color : red;
+				font-weight : bold;
+				width : 50%;
+			}
+			p{
+				width : 50%;
+				margin : 5px auto;
+			}
+			
+			
+			h2{
+				width : 50%;
+				margin : 5px auto;
+			}
+			hr{
+				border
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		<pre> <!-- 블럭요소-->
+			pre테그를 이용하면 입력한 그대로 모양이 출력된다.
+			
+			<<작성 팁>>
+			&lt;em&gt; 테그 : 강조 → 기울임꼴 효과
+			&lt;strong&gt; 테그  : 강하게 → font-weight : bold; 효과
+			&lt;span&gt; 테그 : 여러개 문자들 중 일부분의 문자를 선택할때 사용
+			&lt;div&gt; 테그 : 여러 요소(테그들)들을 나누어 묶음처리
+			
+			스타일
+			color
+			background-color
+			margin
+			font-size
+			font-weight
+			width
+			height
+			display
+			
+		</pre>
+		<hr color="blue">
+		<h1> &quot;Wlecome to the Web Programming" </h1>
+		&amp; &12345
+		<div>	<!-- 여러개 요소를 하나로 감싸는 테그-->
+			<img src="images/스포츠2.jpg">
+			<img src="images/Desert.jpg">
+			</img>
+		</div>
+		
+		<p> <strong>언제든지 <sup>여행</sup>오세요!</strong> <!-- font-weight : bold; 와 같은 기능-->
+			<em>여러분을 &nbsp;&nbsp;&nbsp;<sub>환영</sub>합니다.</em> <!-- em : 기울임체-->
+		</p>
+		<h2>내용</h2>
+		<p>HTML, CSS, JavaScript, <span>JAVA</span>, DB, jsp, <mark>jQuery</mark>, sparing</p>
+					<!-- 전체중 부분만 선택 : <span></span> 으로 묶어주기-->
+	</body>
+</html>
